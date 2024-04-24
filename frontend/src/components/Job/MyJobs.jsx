@@ -17,7 +17,7 @@ const MyJobs = () => {
     const fetchJobs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/job/getmyjob",
+          "https://job-zee-backend.vercel.app/api/v1/job/getmyjob",
           { withCredentials: true }
         );
         setMyJobs(data.myJobs);
@@ -47,7 +47,7 @@ const MyJobs = () => {
   const handleUpdateJob = async (jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
-      .put(`http://localhost:4000/api/v1/job/updatejob/${jobId}`, updatedJob, {
+      .put(`https://job-zee-backend.vercel.app/api/v1/job/updatejob/${jobId}`, updatedJob, {
         withCredentials: true,
       })
       .then((res) => {
@@ -62,7 +62,7 @@ const MyJobs = () => {
   //Function For Deleting Job
   const handleDeleteJob = async (jobId) => {
     await axios
-      .delete(`http://localhost:4000/api/v1/job/deletejob/${jobId}`, {
+      .delete(`https://job-zee-backend.vercel.app/api/v1/job/deletejob/${jobId}`, {
         withCredentials: true,
       })
       .then((res) => {
