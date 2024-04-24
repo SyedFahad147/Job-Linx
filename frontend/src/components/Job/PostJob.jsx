@@ -31,7 +31,7 @@ const PostJob = () => {
     }
     await axios
       .post(
-        "https://job-zee-backend.vercel.app/api/v1/job/postjob",
+        "http://localhost:4000/api/v1/job/postjob",
         fixedSalary.length >= 4
           ? {
               title,

@@ -62,7 +62,7 @@ const MyJobs = () => {
   //Function For Deleting Job
   const handleDeleteJob = async (jobId) => {
     await axios
-      .delete(`https://job-zee-backend.vercel.app/api/v1/job/deletejob/${jobId}`, {
+      .delete(`http://localhost:4000/api/v1/job/deletejob/${jobId}`, {
         withCredentials: true,
       })
       .then((res) => {
